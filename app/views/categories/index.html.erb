@@ -11,11 +11,17 @@
 </div>
 <div>
   <h1>List of categories:</h1>
-  <ul>
+  <div>
     <% @categories.each do |category| %>
-    <li><%= category.name %></li>
+      <div>
+        <%= link_to category_path(category) do %>
+            <div>
+              <%= category.name %>
+            </div>
+        <% end %>
+      </div>
     <% end %>
-  </ul>
+  </div>
 </div>
 
 <% #Placeholders to understand navigation %>
