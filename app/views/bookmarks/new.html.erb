@@ -9,7 +9,5 @@
   <%= simple_form_for [@category, @bookmark] do |f| %>
     <%= f.association :recipe, prompt: "Select a recipe", input_html: {data: {controller: "tom-select"}} %>
     <%= f.input :comment, placeholder: "Enter comment" %>
-    <%= f.button :submit, "Add Recipe", class: "btn btn-flat"%>
+    <%= f.button :submit, "Add Recipe", class: "btn btn-primary"%>
   <% end %>
-
-  

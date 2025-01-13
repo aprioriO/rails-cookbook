@@ -7,15 +7,21 @@
 
 <h1><%= @category.name %></h1>
 <div>
-  <h2>Recipes:</h2>
-   <button>Add a recipe</button>
-   new_category_bookmark
-  <ul>
+  <div>
+    <h2>Recipes:</h2>
+    <div>
+      <%= link_to "Add a recipe", new_category_bookmark_path(@category), class: "btn btn-primary" %>
+    </div>
+  </div>
+
+  <div>
     <% @category.bookmarks.each do |bookmark| %>
-      <li><%= bookmark.recipe.name %></li>
-      <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      <div>
+        <%= bookmark.recipe.name %>
+        <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      </div>
     <% end %>
-  </ul>
+  </div>
 </div>
 
 <div>
