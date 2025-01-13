@@ -1,14 +1,15 @@
 <% # Placeholders to understand navigation %>
 <navbar>
   <button>Logo</button>
-  <button>Home</button>
-  <button>New category</button>
+  <%= link_to "Home", root_path, class: "btn btn-secondary" %>
+  <%= link_to "New category", new_category_path, class: "btn btn-secondary" %>
 </navbar>
 
 <h1><%= @category.name %></h1>
 <div>
   <h2>Recipes:</h2>
    <button>Add a recipe</button>
+   new_category_bookmark
   <ul>
     <% @category.bookmarks.each do |bookmark| %>
       <li><%= bookmark.recipe.name %></li>
@@ -17,4 +18,6 @@
   </ul>
 </div>
 
-<button>Back to list Categories list</button>
+<div>
+  <%= link_to "Back to Categories list", root_path, class: "btn btn-primary" %>
+</div>
