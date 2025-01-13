@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
  root "categories#index"
- resources :categories, except: %i[edit, update]
+ resources :categories, only: [:index, :show, :new, :create]
 end
