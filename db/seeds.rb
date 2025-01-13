@@ -7,9 +7,10 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-
+puts "Cleaning the DB..."
 Recipe.destroy_all if Rails.env.development?
 
+puts "Creating new recipes..."
 Recipe.create!(
   name: "Spaghetti Carbonara",
   description: "A true Italian Carbonara recipe, it's ready in about 30 minutes. There is no cream....",
@@ -37,3 +38,5 @@ Recipe.create!(
   image_url: "https://images.unsplash.com/photo-1494859802809-d069c3b71a8a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   rating: "4.8"
 )
+
+puts "Done! Created #{Recipe.all} recipes!"
