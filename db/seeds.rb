@@ -10,7 +10,7 @@
 puts "Cleaning the DB..."
 Recipe.destroy_all if Rails.env.development?
 
-puts "Creating new recipes..."
+puts "Creating new recipes and categories..."
 Recipe.create!(
   name: "Spaghetti Carbonara",
   description: "A true Italian Carbonara recipe, it's ready in about 30 minutes. There is no cream....",
