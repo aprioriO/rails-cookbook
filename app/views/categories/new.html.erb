@@ -1,1 +1,5 @@
-
+<h1>Create a new Category of recipe</h1>
+<%= simple_form_for @category do |f| %>
+  <%= f.input :name, placeholder: 'Gluten free' %>
+  <%= f.submit class: 'btn btn-flat' %>
+<% end %>
