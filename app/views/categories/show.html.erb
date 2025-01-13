@@ -9,7 +9,13 @@
 <% # Placeholders to understand navigation %>
 <div>
   <h2>Recipes:</h2>
-  <button>Add a recipe</button>
+   <button>Add a recipe</button>
+  <ul>
+    <% @category.bookmarks.each do |bookmark| %>
+      <li><%= bookmark.recipe.name %></li>
+      <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    <% end %>
+  </ul>
 </div>
 
 <button>Back to list Categories list</button>
