@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: radial-gradient(circle, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 70%), url(<%= asset_path('banner.jpg') %>);">
+<div class="banner" style="background-image: radial-gradient(circle, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 70%), url(<%= image_path('banner.jpg') %>);">
   <div class ="center">
     <h1>Patisserie Book</h1>
     <h2>Save your favorite recipes of sweets</h2>
@@ -13,7 +13,7 @@
 
   <div class="cards">
     <% @categories.each do |category| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1612201142850-dd8e00315ece?q=80&w=2908&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)">
+      <div class="card-category" style="background-image: url(<%= image_path('tea.jpg') %>)">
         <%= link_to category_path(category), class: "category-link" do %>
               <%= category.name %>
         <% end %>
