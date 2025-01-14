@@ -1,9 +1,10 @@
-
-<div>
-  <h1>Cookbook</h1>
-  <h2>Save your favorite recipes</h2>
+<div class="banner" style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url(<%= asset_path('fruits.jpg') %>);">
+  <div class="container">
+    <h1>Cook Book</h1>
+    <p>Save your favorite recipes</p>
+  </div>
 </div>
-<div>
+
   <h1>List of categories:</h1>
   <div>
     <% @categories.each do |category| %>
