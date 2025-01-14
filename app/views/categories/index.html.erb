@@ -5,7 +5,7 @@
   </div>
 </div>
 
-<div class="card-trip">
+<div class="card-trip card-header">
   <div class="card-trip-infos">
     <div>
       <h2>List of categories</h2>
@@ -14,13 +14,12 @@
   </div>
 </div>
 
-  <div class="cards">
-    <% @categories.each do |category| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url<%= asset_path('pink.png') %>g)">
-        <%= link_to category_path(category), class: "category-link" do %>
-              <%= category.name %>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+<div class="cards">
+  <% @categories.each do |category| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('jelly.jpg') %>)">
+      <%= link_to category_path(category), class: "category-link" do %>
+            <%= category.name %>
+      <% end %>
+    </div>
+  <% end %>
 </div>

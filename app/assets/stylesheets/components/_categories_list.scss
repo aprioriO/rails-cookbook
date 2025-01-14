@@ -2,6 +2,7 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 20px;
 }
 
 .card-trip > img {
@@ -46,4 +47,9 @@
 .category-link {
   text-decoration: none;
   color: white;
+}
+
+.card-header {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
