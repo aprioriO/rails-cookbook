@@ -1,11 +1,19 @@
-<div class="banner" style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url(<%= asset_path('fruits.jpg') %>);">
+<div class="banner" style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url(<%= asset_path('banner.jpg') %>);">
   <div class="container">
     <h1>Cook Book</h1>
-    <p>Save your favorite recipes</p>
+    <h2>Save your favorite recipes</h2>
   </div>
 </div>
 
-  <h1>List of categories:</h1>
+<div class="card-trip">
+  <div class="card-trip-infos">
+    <div>
+      <h2>List of categories</h2>
+    </div>
+     <%= link_to "New category", new_category_path, class: "btn btn-primary category" %>
+  </div>
+</div>
+
   <div>
     <% @categories.each do |category| %>
       <div>
@@ -17,8 +25,4 @@
       </div>
     <% end %>
   </div>
-</div>
-
-<div>
-  <%= link_to "New category", new_category_path, class: "btn btn-primary" %>
 </div>
