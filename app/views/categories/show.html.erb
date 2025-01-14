@@ -1,22 +1,30 @@
-<h1><%= @category.name %></h1>
-<div>
+
+<div class="banner" style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url(<%= asset_path('banner.jpg') %>);">
+  <h1><%= @category.name %></h1>
+</div>
+
+
+
+<div class="container">
   <div>
-    <h2>Recipes:</h2>
     <div>
-      <%= link_to "Add a recipe", new_category_bookmark_path(@category), class: "btn btn-primary" %>
+      <h2>Recipes:</h2>
+      <div>
+        <%= link_to "Add a recipe", new_category_bookmark_path(@category), class: "btn btn-primary" %>
+      </div>
+    </div>
+
+    <div>
+      <% @category.bookmarks.each do |bookmark| %>
+        <div>
+          <%= bookmark.recipe.name %>
+          <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        </div>
+      <% end %>
     </div>
   </div>
 
   <div>
-    <% @category.bookmarks.each do |bookmark| %>
-      <div>
-        <%= bookmark.recipe.name %>
-        <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-      </div>
-    <% end %>
+    <%= link_to "Back to Categories list", root_path, class: "btn btn-primary" %>
   </div>
-</div>
-
-<div>
-  <%= link_to "Back to Categories list", root_path, class: "btn btn-primary" %>
 </div>
