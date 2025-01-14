@@ -1,7 +1,7 @@
 <div class="banner" style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url(<%= asset_path('banner.jpg') %>);">
   <div class="container">
-    <h1>Cook Book</h1>
-    <h2>Save your favorite recipes</h2>
+    <h1>Patisserie Book</h1>
+    <h2>Save your favorite recipes of sweets</h2>
   </div>
 </div>
 
@@ -10,17 +10,15 @@
     <div>
       <h2>List of categories</h2>
     </div>
-     <%= link_to "New category", new_category_path, class: "btn btn-primary category" %>
+     <%= link_to "New category", new_category_path, class: "btn btn-primary btn-category" %>
   </div>
 </div>
 
-  <div>
+  <div class="cards">
     <% @categories.each do |category| %>
-      <div>
-        <%= link_to category_path(category) do %>
-            <div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url<%= asset_path('pink.png') %>g)">
+        <%= link_to category_path(category), class: "category-link" do %>
               <%= category.name %>
-            </div>
         <% end %>
       </div>
     <% end %>

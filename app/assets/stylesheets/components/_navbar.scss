@@ -13,4 +13,11 @@
 
 .nav-link {
   color: $pink;
+  &:hover {
+    color: $orange; // Change text color on hover
+  }
+}
+
+.logo {
+  border-radius: 50%;
 }
