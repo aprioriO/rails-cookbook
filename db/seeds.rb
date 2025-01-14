@@ -12,65 +12,30 @@ Recipe.destroy_all if Rails.env.development?
 
 puts "Creating new recipes and categories..."
 Recipe.create!(
-  name: "Spaghetti Carbonara",
-  description: "A true Italian Carbonara recipe, it's ready in about 30 minutes. There is no cream....",
-  image_url: "https://images.unsplash.com/photo-1530334044505-5b3aa24cb147?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  name: "Coconut Macaroons",
+  description: "These chewy coconut macaroons are very simple to make with flaked coconut and easy ingredients you're sure to have at hand. This recipe has won many first-place blue ribbons at my state fair!",
+  image_url: "https://images.unsplash.com/photo-1634560604992-7784a29bc419?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   rating: "3.3"
 )
 
 Recipe.create!(
-  name: "Lobster ravioli and scampi cream",
-  description: "Gourmet Seafood lobster ravioli and scampi cream ...",
-  image_url: "https://images.unsplash.com/photo-1464093515883-ec948246accb?q=80&w=2918&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  name: "Oat meal Macarons",
+  description: "This chocolate macaroon recipe is one of our Christmas favorites for no-fuss, no-bake, coconut-oatmeal-chocolate cookies. You can also freeze these. Enjoy!",
+  image_url: "https://images.unsplash.com/photo-1497393001221-abab69e074d1?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   rating: "2.8"
 )
 
 Recipe.create!(
-  name: "Salad Bowl",
-  description: "A true Italian Salad recipe, it's ready in about 30 minutes. There is no gluten....",
-  image_url: "https://images.unsplash.com/photo-1469307670224-ee31d24b6b9a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  name: "Fruits macaron",
+  description: "Macarons are dainty sandwich cookies made with almond flour and meringue and filled with jam, buttercream, or ganache. ",
+  image_url: "https://images.unsplash.com/photo-1692106913324-ef53efa2cd56?q=80&w=2948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   rating: "4.3"
 )
 
 Recipe.create!(
-  name: "Veggies",
-  description: "A true Canadian Salad recipe, it's ready in about 5 minutes. There is no bread....",
-  image_url: "https://images.unsplash.com/photo-1494859802809-d069c3b71a8a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  rating: "4.8"
-)
-
-puts "Done! Created #{Recipe.all} recipes!"
-
-
-puts "Cleaning the DB..."
-Recipe.destroy_all if Rails.env.development?
-
-puts "Creating new recipes and categories..."
-Recipe.create!(
-  name: "Spaghetti Carbonara",
-  description: "A true Italian Carbonara recipe, it's ready in about 30 minutes. There is no cream....",
-  image_url: "https://images.unsplash.com/photo-1530334044505-5b3aa24cb147?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  rating: "3.3"
-)
-
-Recipe.create!(
-  name: "Lobster ravioli and scampi cream",
-  description: "Gourmet Seafood lobster ravioli and scampi cream ...",
-  image_url: "https://images.unsplash.com/photo-1464093515883-ec948246accb?q=80&w=2918&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  rating: "2.8"
-)
-
-Recipe.create!(
-  name: "Salad Bowl",
-  description: "A true Italian Salad recipe, it's ready in about 30 minutes. There is no gluten....",
-  image_url: "https://images.unsplash.com/photo-1469307670224-ee31d24b6b9a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  rating: "4.3"
-)
-
-Recipe.create!(
-  name: "Veggies",
-  description: "A true Canadian Salad recipe, it's ready in about 5 minutes. There is no bread....",
-  image_url: "https://images.unsplash.com/photo-1494859802809-d069c3b71a8a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  name: "Macaroon Browniess",
+  description: "These decadent brownies have a delicious layer of coconut sandwiched between two chocolate layers.",
+  image_url: "https://images.unsplash.com/photo-1568241757756-935df2d96f03?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   rating: "4.8"
 )
 
