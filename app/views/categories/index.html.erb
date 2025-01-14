@@ -1,15 +1,14 @@
-<div class="banner" style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url(<%= asset_path('banner.jpg') %>);">
-  <div class="container">
+<div class="banner" style="background-image: radial-gradient(circle, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 70%), url(<%= asset_path('banner.jpg') %>);">
+  <div class ="center">
     <h1>Patisserie Book</h1>
     <h2>Save your favorite recipes of sweets</h2>
   </div>
 </div>
 
 <div class="container">
-
   <div class="cards-info">
-    <h2>List of categories</h2>
-    <%= link_to "New category", new_category_path, class: "btn btn-primary btn-category" %>
+    <h2>Choose your favorite sweets</h2>
+    <%= link_to "Add category", new_category_path, class: "btn btn-primary btn-pink" %>
   </div>
 
   <div class="cards">
@@ -20,6 +19,6 @@
         <% end %>
       </div>
     <% end %>
+
   </div>
-  
 </div>
