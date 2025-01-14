@@ -1,8 +1,11 @@
 .card-trip {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .card-trip > img {
@@ -17,12 +20,6 @@
   font-weight: bold;
   margin: 0;
 }
-
-// .card-trip p {
-//   font-size: 12px;
-//   opacity: .7;
-//   margin: 0;
-// }
 
 .card-trip .btn-category {
   background-color: $pink;
@@ -49,7 +46,8 @@
   color: white;
 }
 
-.card-header {
-  margin-top: 20px;
-  margin-bottom: 20px;
+.categories-list {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 0;
 }
