@@ -1,0 +1,60 @@
+.form-container {
+  max-width: 600px; /* Set a reasonable width for the form */
+  margin: 50px auto; /* Center the form horizontally and give space at the top */
+  padding: 20px;
+  background-color: #f9f9f9; /* Light background color for contrast */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+
+  &.form-new {
+    text-align: center;
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #333; /* Darker color for text */
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px; /* Space between form elements */
+
+      input[type="text"],
+      input[type="file"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc; /* Light border */
+        border-radius: 5px;
+        transition: border-color 0.3s;
+
+        &:focus {
+          border-color: $pink; /* Highlight border on focus */
+          outline: none;
+        }
+      }
+
+      .btn-form-pink {
+        background-color: $green; /* Use your pink variable for consistency */
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+
+        &:hover {
+          background-color: darken($green, 10%); /* Slightly darker pink on hover */
+          transform: scale(1.05); /* Subtle zoom effect */
+        }
+
+        &:active {
+          transform: scale(0.95); /* Pressed effect */
+        }
+      }
+    }
+  }
+}

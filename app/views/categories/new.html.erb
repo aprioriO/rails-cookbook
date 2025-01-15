@@ -1,6 +1,12 @@
-<h1>Create a new Category</h1>
-<%= simple_form_for @category do |f| %>
-  <%= f.input :name, placeholder: 'Gluten free' %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit class: 'btn btn-primary' %>
-<% end %>
+<div class = "container">
+  <div class="form-container form-new">
+    <div><h1>Create a new Category</h1></div>
+    <div>
+      <%= simple_form_for @category do |f| %>
+        <%= f.input :name, placeholder: 'Gluten free' %>
+        <%= f.input :photo, as: :file %>
+        <%= f.submit class: 'btn btn-primary btn-form-pink' %>
+      <% end %>
+    </div>
+  </div>
+</div>

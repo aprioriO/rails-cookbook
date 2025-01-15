@@ -1,14 +1,10 @@
-<div class="container">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path('banner.jpg') %>)">
+<div class = "container">
+  <div class="form-container form-new">
     <h3>Add a recipe to your <%= @category.name %> category</h3>
+    <%= simple_form_for [@category, @bookmark] do |f| %>
+      <%= f.association :recipe, prompt: "Select a recipe", input_html: {data: {controller: "tom-select"}} %>
+      <%= f.input :comment, placeholder: "Enter comment" %>
+      <%= f.button :submit, "Add Recipe", class: "btn btn-primary btn-form-pink"%>
+    <% end %>
   </div>
-
-  <h3>Add a recipe to your <%= @category.name %> category</h3>
-  <%= simple_form_for [@category, @bookmark] do |f| %>
-    <%= f.association :recipe, prompt: "Select a recipe", input_html: {data: {controller: "tom-select"}} %>
-    <%= f.input :comment, placeholder: "Enter comment" %>
-    <%= f.button :submit, "Add Recipe", class: "btn btn-primary"%>
-  <% end %>
-
 </div>
-⭐️
