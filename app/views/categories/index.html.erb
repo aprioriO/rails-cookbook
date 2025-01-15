@@ -1,7 +1,7 @@
 <div class="banner" style="background-image: radial-gradient(circle, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 70%), url(<%= image_path('banner.jpg') %>);">
   <div class ="center">
-    <h1>Patisserie Book</h1>
-    <h2>Save your favorite recipes of sweets</h2>
+    <h1>The Patisserie Cookbook</h1>
+    <h2>Save your favorite dessert recipes</h2>
   </div>
 </div>
 
@@ -13,12 +13,11 @@
 
   <div class="cards">
     <% @categories.each do |category| %>
-      <div class="card-category" style="background-image: url(<%= image_path('tea.jpg') %>)">
+      <div class="card-category" style="background-image: url(<%= image_path('jelly.jpg') %>)">
         <%= link_to category_path(category), class: "category-link" do %>
               <%= category.name %>
         <% end %>
       </div>
     <% end %>
-
   </div>
 </div>

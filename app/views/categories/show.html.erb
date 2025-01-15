@@ -1,18 +1,13 @@
-
-<div class="banner" style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url(<%= asset_path('banner.jpg') %>);">
-  <h1><%= @category.name %></h1>
+<div class="banner" style="background-image: radial-gradient(circle, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 70%), url(<%= image_path('banner.jpg') %>);">
+  <div class ="center">
+    <h2><%= @category.name %></h2>
+  </div>
 </div>
 
-
-
 <div class="container">
-  <div>
-    <div>
-      <h2>Recipes:</h2>
-      <div>
-        <%= link_to "Add a recipe", new_category_bookmark_path(@category), class: "btn btn-primary" %>
-      </div>
-    </div>
+  <div class = "cards-info">
+    <h2>Recipes:</h2>
+    <%= link_to "Add a recipe", new_category_bookmark_path(@category), class: "btn btn-primary" %>
     <div>
       <% @category.bookmarks.each do |bookmark| %>
         <div>
