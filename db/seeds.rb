@@ -7,12 +7,14 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-
+require "json"
+require "open-uri"
 
 puts "Cleaning the DB..."
-# Recipe.destroy_all if Rails.env.development?
+Recipe.destroy_all if Rails.env.development?
 
 puts "Creating new recipes and categories..."
+
 
 meals_categories = ["Dessert"]
 meals_categories.each do |meal_category|
