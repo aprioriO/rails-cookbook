@@ -33,3 +33,26 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
+
+.card-recipe {
+  overflow: hidden;
+  background:white;
+  box-shadow: 0 0 15px rgba (0,0,0,0.2);
+}
+
+.card-recipe > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-recipe-description {
+  padding: 16px;
+  height: 200px;
+}
+
+.card-recipe-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+}
