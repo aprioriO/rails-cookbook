@@ -7,10 +7,24 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+
 puts "Cleaning the DB..."
-Recipe.destroy_all if Rails.env.development?
+# Recipe.destroy_all if Rails.env.development?
 
 puts "Creating new recipes and categories..."
+
+meals_categories = ["Dessert"]
+meals_categories.each do |meal_category|
+  url = "https://www.themealdb.com/api/json/v1/1/filter.php?c=#{meal_category}"
+  recipes_serialized = URI.parse(url).read
+  recipes = JSON.parse(recipes_serialized)
+  recipes["meals"].each do |recipe|
+    p recipe["idMeal"]
+  end
+end
+
+
 Recipe.create!(
   name: "Coconut Macaroons",
   description: "These chewy coconut macaroons are very simple to make with flaked coconut and easy ingredients you're sure to have at hand. This recipe has won many first-place blue ribbons at my state fair!",
@@ -38,5 +52,7 @@ Recipe.create!(
   image_url: "https://images.unsplash.com/photo-1568241757756-935df2d96f03?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   rating: "4.8"
 )
+
+
 
 puts "Done! Created #{Recipe.all} recipes!"

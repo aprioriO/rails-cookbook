@@ -13,8 +13,11 @@
   <div class="cards">
     <% @category.bookmarks.each do |bookmark| %>
       <div class="card-recipe">
+        <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn-delete' %>
+        <%= link_to bookmark_path(bookmark),
+          data: {turbo_method: :delete,
+                turbo_confirm: "Are you sure?"}, class: 'btn-delete' do %>
 
-        <%= link_to bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn-delete" do %>
           <i class="fa-solid fa-trash"></i>
         <% end %>
 
