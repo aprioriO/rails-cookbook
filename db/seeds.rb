@@ -14,9 +14,15 @@ puts "Cleaning the DB..."
 Recipe.destroy_all if Rails.env.development?
 
 puts "Creating new recipes and categories..."
-
-
 meals_categories = ["Dessert"]
+
+def recipe_builder(id)
+  url = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=#{id}"
+  meals_serialized = URI.parse(url).read
+  meal = JSON.parse(meals_serialized)
+  p meal["meals"][0]["strMeal"]
+end
+
 meals_categories.each do |meal_category|
   url = "https://www.themealdb.com/api/json/v1/1/filter.php?c=#{meal_category}"
   recipes_serialized = URI.parse(url).read
