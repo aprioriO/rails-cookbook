@@ -21,13 +21,20 @@ def recipe_builder(id)
   meals_serialized = URI.parse(url).read
   meal = JSON.parse(meals_serialized)
   p meal["meals"][0]["strMeal"]
+
+  Recipe.create!(
+    name: meal["meals"],
+    description: meal["strInstructions"],
+    image_url: meal["strMealThumb"],
+    rating: rand(2..5.0).floor(1)
+  )
 end
 
 meals_categories.each do |meal_category|
   url = "https://www.themealdb.com/api/json/v1/1/filter.php?c=#{meal_category}"
   recipes_serialized = URI.parse(url).read
   recipes = JSON.parse(recipes_serialized)
-  recipes["meals"].each do |recipe|
+  recipes["meals"].take(20).each do |recipe|
     p recipe["idMeal"]
   end
 end
