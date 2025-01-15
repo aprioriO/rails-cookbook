@@ -10,35 +10,16 @@
 require "json"
 require "open-uri"
 
-puts "Cleaning the DB..."
+puts "Cleaning the Bookmarks DB..."
+Bookmark.destroy_all if Rails.env.development?
+
+puts "Cleaning the Recipes DB..."
 Recipe.destroy_all if Rails.env.development?
 
+puts "Cleaning the Categories DB..."
+Category.destroy_all if Rails.env.development?
+
 puts "Creating new recipes and categories..."
-meals_categories = ["Dessert"]
-
-def recipe_builder(id)
-  url = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=#{id}"
-  meals_serialized = URI.parse(url).read
-  meal = JSON.parse(meals_serialized)
-  p meal["meals"][0]["strMeal"]
-
-  Recipe.create!(
-    name: meal["meals"],
-    description: meal["strInstructions"],
-    image_url: meal["strMealThumb"],
-    rating: rand(2..5.0).floor(1)
-  )
-end
-
-meals_categories.each do |meal_category|
-  url = "https://www.themealdb.com/api/json/v1/1/filter.php?c=#{meal_category}"
-  recipes_serialized = URI.parse(url).read
-  recipes = JSON.parse(recipes_serialized)
-  recipes["meals"].take(20).each do |recipe|
-    p recipe["idMeal"]
-  end
-end
-
 
 Recipe.create!(
   name: "Coconut Macaroons",
@@ -68,6 +49,57 @@ Recipe.create!(
   rating: "4.8"
 )
 
+def recipe_builder(id)
+  url = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=#{id}"
+  meals_serialized = URI.parse(url).read
+  meal = JSON.parse(meals_serialized)["meals"][0]
+  p meal["strMeal"]
+
+  puts "Creating #{meal["meals"]}"
+  Recipe.create!(
+    name: meal["strMeal"],
+    description: meal["strInstructions"],
+    image_url: meal["strMealThumb"],
+    rating: rand(2..5.0).floor(1)
+  )
+end
+
+meals_categories.each do |meal_category|
+  url = "https://www.themealdb.com/api/json/v1/1/filter.php?c=#{meal_category}"
+  recipes_serialized = URI.parse(url).read
+  recipes = JSON.parse(recipes_serialized)
+  recipes["meals"].take(20).each do |recipe|
+    p recipe["idMeal"]
+    recipe_builder(recipe["idMeal"])
+  end
+end
+
+puts "Creating Bookmarks and Categories"
+dessert1 = Category.create!(name: "Breakfast")
+recipe1 = Recipe.all[0]
+Bookmark.create!(comment: "Awesome!", recipe: recipe1, category: dessert1)
+
+dessert2 = Category.create!(name: "Gluten free")
+recipe2 = Recipe.all[0]
+Bookmark.create!(comment: "Brilliant!", recipe: recipe2, category: dessert2)
+
+dessert3 = Category.create!(name: "Lactose free")
+recipe3 = Recipe.all[0]
+Bookmark.create!(comment: "Good for health!", recipe: recipe3, category: dessert3)
+
+dessert4 = Category.create!(name: "Pancakes")
+recipe4 = Recipe.all[0]
+Bookmark.create!(comment: "Breakfast the best!", recipe: recipe4, category: dessert4)
+
+dessert5 = Category.create!(name: "Cakes")
+recipe5 = Recipe.all[0]
+Bookmark.create!(comment: "Delicious!", recipe: recipe5, category: dessert5)
+
+dessert6 = Category.create!(name: "Doughnuts")
+recipe6 = Recipe.all[0]
+Bookmark.create!(comment: "Sweeeet!", recipe: recipe6, category: dessert6)
+
+meals_categories = ["Dessert"]
 
 
 puts "Done! Created #{Recipe.all} recipes!"
