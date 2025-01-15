@@ -14,9 +14,9 @@
     <% @category.bookmarks.each do |bookmark| %>
       <div class="card-recipe">
 
-         <%= link_to bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn-delete" do %>
+        <%= link_to bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn-delete" do %>
           <i class="fa-solid fa-trash"></i>
-         <% end %>
+        <% end %>
 
         <img src="<%=bookmark.recipe.image_url%>" alt="recipe image">
 
@@ -38,9 +38,7 @@
       </div>
     <% end %>
   </div>
-  </div>
-
   <div>
-    <%= link_to "Back to Categories list", root_path, class: "btn btn-primary" %>
+    <%= link_to "Back to Categories list", root_path, class: "btn btn-primary btn-nav" %>
   </div>
 </div>
