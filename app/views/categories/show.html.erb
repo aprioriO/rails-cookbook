@@ -7,15 +7,32 @@
 <div class="container">
   <div class = "cards-info">
     <h2>Recipes:</h2>
-    <%= link_to "Add a recipe", new_category_bookmark_path(@category), class: "btn btn-primary" %>
-    <div>
-      <% @category.bookmarks.each do |bookmark| %>
-        <div>
-          <%= bookmark.recipe.name %>
-          <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    <%= link_to "Add a recipe", new_category_bookmark_path(@category), class: "btn btn-primary btn-pink" %>
+  </div>
+
+  <div class="cards">
+    <% @category.bookmarks.each do |bookmark| %>
+      <div class="card-recipe">
+        <img src="<%=bookmark.recipe.image_url%>" alt="recipe image">
+
+        <div class="card-recipe-description">
+          <h2><%= bookmark.recipe.name %></h2>
+          <p><%= bookmark.recipe.description.truncate(250) %></p>
         </div>
-      <% end %>
-    </div>
+
+        <div class="card-recipe-info">
+          <div>
+            <%= bookmark.comment %>
+          </div>
+
+          <div>
+            <%= bookmark.recipe.rating %> <%= '⭐️' * bookmark.recipe.rating %>
+          </div>
+        </div>
+        <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      </div>
+    <% end %>
+  </div>
   </div>
 
   <div>
