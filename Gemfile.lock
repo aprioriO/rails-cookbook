@@ -152,7 +152,7 @@ GEM
     jbuilder (2.13.0)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
-    json (2.18.1)
+    json (2.19.2)
     logger (1.7.0)
     loofah (2.24.0)
       crass (~> 1.0.2)
